@@ -1,0 +1,59 @@
+<div class="col-xs-12">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Form</div>
+        <div class="panel-body">
+            <!-- form starts -->
+            <form novalidate class="form-horizontal" role="form" name="addNewFrog">
+
+                <!-- validation classes -->
+                <div ng-show="showError" class="alert alert-danger" role="alert">All Information should be valid!</div>
+                <div ng-show="showMsg" class="alert alert-success" role="alert">New Frog added Successfully</div>
+
+                <!--  input -->
+                <div class="form-group">
+                    <label for="inputspecies" class="col-sm-1 control-label">Family</label>
+                    <div class="col-sm-5">
+                        <input ng-model="newFrog.family" required type="text" class="form-control" id="inputspecies" placeholder="Family Name">
+                        <p class="help-block">Family/breed</p>
+                    </div>
+                </div>
+
+                <!--  input -->
+                <div class="form-group">
+                    <label for="inputage" class="col-sm-1 control-label">Age</label>
+                    <div class="col-sm-5">
+                        <input ng-model="newFrog.age" required type="number" class="form-control" id="inputage" placeholder="Age">
+                        <p class="help-block">Age in months</p>
+                    </div>
+                </div>
+
+                <!--  input -->
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Sex</label>
+                    <div class="col-sm-5">
+                        <div class="radio">
+                            <label>
+                                <input ng-model="newFrog.sex" required type="radio" name="sex" id="sex_male" value="male" checked> Male
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input ng-model="newFrog.sex" required type="radio" name="sex" id="sex_female" value="female"> Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  btn submit -->
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">&nbsp;</label>
+                    <div class="col-sm-5">
+                        <button ng-click="add(addNewFrog,newFrog)" type="submit" class="btn btn-default">Add</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

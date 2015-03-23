@@ -1,0 +1,47 @@
+<!---->
+<div class="col-xs-12">
+    <h1 class="page-header">Dashboard</h1>
+    <!--_________________charts______________________-->
+    <nvd3-pie-chart data="genderCount" x="xfn()" y="yfn()" showLabels="true" showLegend="true" pieLabelsOutside="false" labelType="percent">
+        <svg style="width:300px;height:300px"></svg>
+    </nvd3-pie-chart>
+    <!--_________________charts end______________________-->
+    <div class="row">
+        <div class="col-xs-6 col-sm-3  well text-center">
+            <h1>{{genderCount[1][1]}}</h1>
+            <h4>Male</h4>
+        </div>
+        <div class="col-xs-6 col-sm-3  well text-center">
+            <h1>{{genderCount[0][1]}}</h1>
+            <h4>Female</h4>
+        </div>
+        <div class="col-xs-6 col-sm-3  well text-center">
+            <h1>{{genderCount[0][1]+genderCount[1][1]}}</h1>
+            <h4>Total</h4>
+        </div>
+    </div>
+</div>
+<!---->
+<div class="col-xs-12">
+    <h2 class="sub-header">Frogs List</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Family</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="frog in $frogs track by $index | orderBy:$index:true">
+                    <td>{{$index+1}}</td>
+                    <td>{{frog.family}}</td>
+                    <td>{{frog.age}}</td>
+                    <td>{{frog.sex}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

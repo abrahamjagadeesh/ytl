@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Frog Managament System</title>
+    <!-- styles  -->
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/nvd3/nv.d3.css">
+</head>
+
+<body ng-app="mgmtsystem">
+    <div class="container" ng-controller="MainCtrl">
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/home">Frog Management System</a>
+                </div>
+                <div id="navbar" class="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
+                        <li ng-class="{ active: isActive('/addnew')}"><a href="#/addnew">Add New</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+        <div class="row">
+            <div class="view-animate-container">
+                <!-- ng view container -->
+                <div ng-view class="view-animate"></div>
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="./bower_components/lodash/lodash.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <!--d3-->
+    <script src="./bower_components/d3/d3.js"></script>
+    <script src="./bower_components/nvd3/nv.d3.js"></script>
+    <script src="./bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+    <!--d3-->
+    <!-- contains default storage values for testing  -->
+    <script src="./assets/db.js"></script>
+    <script src="./assets/app.js"></script>
+</body>
+
+</html>
